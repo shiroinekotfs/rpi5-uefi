@@ -1,11 +1,8 @@
-# End of support notice
-This repository is no longer maintained and has been archived.
+Thanks to Mario Bălănică for doing the work to get UEFI working on the Pi 5.  This project just aims to provide access to UEFI users with D0 models of the Pi, including 16 GB, 2 GB, and any other recently manufactured model of the others, plus all Compute Modules.  
 
-The firmware provided here has only been tested on early Raspberry Pi 5B models with the BCM2712C1 SoC. Recent D0 models may require a newer EEPROM firmware, which has been reported to break the graphical output in UEFI and other projects. Given that it used to work before, we view this as a limitation of the latest EEPROM firmware rather than a UEFI issue.
+This project does not yet fix the framebuffer, but I expect that we will be able to find a solution and I have some information on potential hardware differences between the C1 and D0 framebuffers.   The source code will not compile in it's current state.   Assistance in getting the edk2 submodule to the point that it can compile would be greatly appreciated.  I can help users make local edits to their repo if they want to help compile and test.  My level of involvement will depend on the level of involvement of the community.  I won't be here to work on features or improvements on my own without collaboration, but am motivated to keep working on improving ACPI compatibility with the Pi if others are. 
 
-If you are still interested in running UEFI on these boards, please contact Raspberry Pi for further support.
-
-You may also want to consider using better supported hardware instead: https://github.com/edk2-porting/edk2-rk3588
+Dt-bindings are being released for the RP1 within the coming months so we may be able to get ethernet and some other features working.  I have a CM5 and I would eventually like to get eMMC to work properly, but for now CM5 users should boot from NVME or USB.
 
 # Raspberry Pi 5 UEFI
 This repository contains a TF-A + EDK2 UEFI firmware port for Raspberry Pi 5.
