@@ -9,7 +9,7 @@
 [submodule "edk2-platforms"]
 	path = edk2-platforms
 	url = https://github.com/NumberOneGit/edk2-platforms.git
-	branch = rpi5-dev
+	branch = D0-test
 [submodule "edk2-non-osi"]
 	path = edk2-non-osi
 	url = https://github.com/tianocore/edk2-non-osi.git
