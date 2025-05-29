@@ -1,6 +1,10 @@
-Thanks to Mario Bălănică for doing the work to get UEFI working on the Pi 5.  This project just aims to provide access to UEFI users with D0 models of the Pi, including 16 GB, 2 GB, and any other recently manufactured model of the others, plus all Compute Modules.  
+Thanks to Mario Bălănică for the work enabling UEFI support on the Raspberry Pi 5. This project aims to provide UEFI access for users with D0 models—including the 16 GB, 2 GB, and other recently manufactured variants—as well as all Compute Modules.
 
-The source code will not compile in it's current state.   Assistance in getting the edk2 submodule to the point that it can compile would be greatly appreciated.  I can help users make local edits to their repo if they want to help compile and test.  My level of involvement will depend on the level of involvement of the community.  I won't be here to work on features or improvements on my own without collaboration, but am motivated to keep working on improving ACPI compatibility with the Pi if others are. 
+This fork remaps pinctrl for the D0 revision of the BCM2712, ensuring newer Pi 5 boards boot correctly with UEFI. There is currently a known framebuffer issue affecting the UEFI menu and some operating systems on these models. I’ve reported this issue to the Raspberry Pi Foundation, and they have confirmed it will be addressed in their next major EEPROM update. Until that update is released, the May 8 EEPROM and all earlier versions will continue to exhibit framebuffer problems.
+
+As a temporary measure, I’ve implemented a fix so the UEFI menu displays an image, but this does not fully resolve the underlying issue. Some operating systems will function without the framebuffer fix, but others require you to set framebuffer_depth=24 in your config.txt. Without this, or until the EEPROM update is available, you may encounter display artifacts or a black screen.
+
+My continued involvement in this project depends on community participation. I’m motivated to improve ACPI compatibility and other features if others contribute, but won’t be able to maintain or add features alone.
 
 Dt-bindings are being released for the RP1 within the coming months so we may be able to get ethernet and some other features working.  I have a CM5 and I would eventually like to get eMMC to work properly, but for now CM5 users should boot from NVME or USB.
 
